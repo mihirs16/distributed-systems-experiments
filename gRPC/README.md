@@ -1,6 +1,6 @@
 # gRPC
 
-Experiment for gRPC based on the starter repo at ![https://github.com/jdoyle314/ECS656U-796PLab1StartingPoint]. Some dependencies' versions have been updated to work with newer architectures like `aarch64`.
+Experiment for gRPC based on [this starter repo](https://github.com/jdoyle314/ECS656U-796PLab1StartingPoint). Some dependencies' versions have been updated to work with newer architectures like `aarch64`.
 
 ## How to run
 

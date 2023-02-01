@@ -4,4 +4,4 @@ Experiments for ECS796P Distributed Systems.
 
 ## Contents
 
-1. ![/gRPC](gRPC with Java)
+1. [gRPC with Java](/gRPC)
