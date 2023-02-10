@@ -1,2 +1,8 @@
 # target files (mvn buildable)
 */target/
+
+# venv (python virtual env)
+*/venv/
+
+# pycache (cache for python)
+*/__pycache__/
