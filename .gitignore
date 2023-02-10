@@ -6,3 +6,6 @@
 
 # pycache (cache for python)
 */__pycache__/
+
+# .vscode
+.vscode/

@@ -1,6 +1,6 @@
 import grpc
 import MatrixMult_pb2_grpc
-from MatrixMult_pb2 import MatrixRequest, MatrixReply
+from MatrixMult_pb2 import MatrixRequest
 
 
 def MutliplyMatrix (stub: MatrixMult_pb2_grpc.MatrixServiceStub):
@@ -129,6 +129,36 @@ def run ():
     with grpc.insecure_channel('localhost:50051') as channel:
         stub = MatrixMult_pb2_grpc.MatrixServiceStub(channel)
         print(MutliplyMatrix(stub))
+
+
+def addMatrix(A, B):
+    with grpc.insecure_channel('localhost:50051') as channel:
+        stub = MatrixMult_pb2_grpc.MatrixServiceStub(channel)
+        C = stub.AddBlock(MatrixRequest(
+            a00 = A[0][0],
+            a01 = A[0][1],
+            a10 = A[1][0],
+            a11 = A[1][1],
+            b00 = B[0][0],
+            b01 = B[0][1],
+            b10 = B[1][0],
+            b11 = B[1][1]
+        ))
+
+    return [[C.c00, C.c01], [C.c10, C.c11]]
+
+
+def multMatrix(A, B):
+    with grpc.insecure_channel('localhost:50051') as channel:
+        stub = MatrixMult_pb2_grpc.MatrixServiceStub(channel)
+        C = stub.MultiplyBlock(MatrixRequest(
+            a00 = A[0][0], a01 = A[0][1],
+            a10 = A[1][0], a11 = A[1][1],
+            b00 = B[0][0], b01 = B[0][1],
+            b10 = B[1][0], b11 = B[1][1]
+        ))
+
+    return [[C.c00, C.c01], [C.c10, C.c11]]
 
 
 if __name__ == "__main__":
